@@ -1,10 +1,20 @@
 # Instructions
 
+## Prerequisite
+
+- Please install redis server into your local
+- Configure `product_showtime/settings.py` for its `CACHE` section to work with your requirement.
+
 ## INSTALLATION
 
 - First activate the virtual environment using `source/venv/activate`
 - Run the package using `python manage.py runserver`
 - Run tests using `python manage.py test`
+
+## FIRST TODOs
+
+- Run the management command `python manage.py load_movies_from_imdb` to load the latest box-office movies from IMdb.
+- The above mentioned command may be assigned to a cron job to run once a day to update the records regularly.
 
 ## FEATURES
 
