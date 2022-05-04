@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "c5efce0c-7667-4162-b75a-a0a0bb1a3eba",
+		"name": "Showtime",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Gourab\",\n    \"last_name\": \"Saha\",\n    \"email\": \"gourabsaha@outlook.in\",\n    \"password\": \"pass1234\",\n    \"age\": 28\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/account/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"account",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"gourabsaha@outlook.in\",\n    \"password\": \"pass1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/account/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Playing Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/shows/all",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"shows",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Show Timings by MovieID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/shows/8115900",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"shows",
+						"8115900"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Show",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUxNTc0MDQ5LCJpYXQiOjE2NTE1NzM3NDksImp0aSI6ImZkNTRlNjExOTdmOTQxMjhiMWU1ZTI0NjU2ZDEzZjJlIiwidXNlcl9pZCI6MX0.nnHllxPKylrEN9gSBkr-fR6QLCms27umvC3VxKmDyH4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"showtime_id\": 70,\n    \"seats\": 8\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/shows/book",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"shows",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "See All Bookings",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUxNTc1MzQwLCJpYXQiOjE2NTE1NzUwNDAsImp0aSI6ImM4ODQ3ZjdjZWRkMDQ2OTM5NzQyYjIyYWE0NzQ1YTU2IiwidXNlcl9pZCI6MX0.gonSKnfBfevN3A5RxpHZDxnk5Ir5f_CftvO9IeIIdGo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/booking/all?cancelled=True",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"booking",
+						"all"
+					],
+					"query": [
+						{
+							"key": "cancelled",
+							"value": "True"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Booking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8000"
+		}
+	]
+}
