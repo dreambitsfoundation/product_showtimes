@@ -1,0 +1,7 @@
+django
+django-redis
+cinemagoer
+djangorestframework
+django-cors
+djangorestframework_simplejwt
+pytz
